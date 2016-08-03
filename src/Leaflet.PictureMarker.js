@@ -1,7 +1,7 @@
 L.PictureMarker = L.Path.extend({
     options: {
         draggable: false,
-        icon: "//cdn.bootcss.com/leaflet/1.0.0-rc.2/images/marker-icon.png"
+        icon: L.Icon.Default.imagePath + '/marker-icon'+(L.Browser.retina? '-2x' : '') + '.png'
     },
 
     initialize: function (latlng, options) {
