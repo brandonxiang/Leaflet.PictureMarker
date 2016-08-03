@@ -1,0 +1,26 @@
+{
+  "name": "leafletpicturemarker",
+  "version": "1.0.0",
+  "description": "A plugin for leaflet1.0 to show a picture marker by L.Canvas",
+  "main": "src/Leaflet.PictureMarker.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "browser-sync start --server --files \"**/*.html,**/*.css,**/*.js\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brandonxiang/Leaflet.PictureMarker.git"
+  },
+  "keywords": [
+    "leaflet",
+    "picture",
+    "marker",
+    "canvas"
+  ],
+  "author": "brandonxiang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/brandonxiang/Leaflet.PictureMarker/issues"
+  },
+  "homepage": "https://github.com/brandonxiang/Leaflet.PictureMarker#readme"
+}
