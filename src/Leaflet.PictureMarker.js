@@ -34,7 +34,6 @@ L.PictureMarker = L.Path.extend({
             topleft = [width + w, height + w],
             bottonright = [width + w, w];
 
-
         this._pxBounds = new L.Bounds(this._point.subtract(topleft), this._point.add(bottonright));
     },
 
@@ -72,6 +71,9 @@ L.Canvas.include({
         this._drawnLayers[layer._leaflet_id] = layer;
         var img = new Image();
         img.src = layer._icon;
-        ctx.drawImage(img, p.x- img.width/2, p.y-img.height);
+        img.onload = function(){
+            ctx.drawImage(img, p.x- img.width/2, p.y-img.height);
+        }
+
     }
 });
