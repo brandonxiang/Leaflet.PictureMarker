@@ -1,7 +1,9 @@
 L.PictureMarker = L.Path.extend({
     options: {
         draggable: false,
-        icon: L.Icon.Default.imagePath + '/marker-icon'+(L.Browser.retina? '-2x' : '') + '.png'
+        fill:false,
+        stroke:false,
+        icon: L.Icon.Default.imagePath + '/marker-icon' + (L.Browser.retina ? '-2x' : '') + '.png'
     },
 
     initialize: function (latlng, options) {
@@ -52,8 +54,12 @@ L.PictureMarker = L.Path.extend({
     },
 
     _containsPoint: function (p) {
-        return p.distanceTo(this._point) <= this._radius + this._clickTolerance();
-    }
+        var tolerance = this._clickTolerance();
+        return (p.x <= this._point.x + this._width / 2 + tolerance) &&
+            (p.x >= this._point.x - this._width / 2 - tolerance) &&
+            (p.y <= this._point.y + tolerance) &&
+            (p.y >= this._point.y - this._height - tolerance);
+    },
 
 });
 
@@ -71,9 +77,9 @@ L.Canvas.include({
         this._drawnLayers[layer._leaflet_id] = layer;
         var img = new Image();
         img.src = layer._icon;
-        img.onload = function(){
-            ctx.drawImage(img, p.x- img.width/2, p.y-img.height);
+        img.onload = function () {
+            ctx.drawImage(img, p.x - img.width / 2, p.y - img.height);
         }
-
+        this._fillStroke(ctx, layer);
     }
 });
