@@ -15,7 +15,6 @@ L.PictureMarker = L.Path.extend({
     setLatLng: function (latlng) {
         this._latlng = L.latLng(latlng);
         this.redraw();
-
     },
 
     getLatLng: function () {

@@ -4,4 +4,4 @@ var base = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 
-var pictureMarker = L.pictureMarker([45.51, -122.68]).addTo(map);
+var pictureMarker = L.pictureMarker([45.51, -122.68],{ icon: 'test.png' }).addTo(map);

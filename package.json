@@ -4,7 +4,6 @@
   "description": "A plugin for leaflet1.0 to show a picture marker by L.Canvas",
   "main": "src/Leaflet.PictureMarker.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "browser-sync start --server --files \"**/*.html,**/*.css,**/*.js\""
   },
   "repository": {
